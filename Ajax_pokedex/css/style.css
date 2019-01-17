@@ -1,0 +1,47 @@
+#pokemonimage{
+    position: absolute;
+    top: 150px;
+    left: 95px;
+    height: 200px;
+    
+
+}
+
+#pokemonname{
+    color: #ffffff;
+    position: absolute;
+    top: 200px;
+    left:500px;
+    height: 50px;
+    
+
+}
+
+#pokemonid{
+    position: absolute;
+    color:#ffffff;
+    font-size: 30px;
+    top: 460px;
+    left: 145px;
+    
+
+}
+
+#previous{
+    position: absolute;
+    top: 150px;
+    left: 580px;
+    height: 150px;
+    
+
+}
+
+#prevname{
+    color: #ffffff;
+    position: absolute;
+    top: 230px;
+    left:500px;
+    height: 50px;
+    
+
+}
