@@ -1,0 +1,33 @@
+div{
+    margin: 20px auto ;
+    text-align: center;
+}
+#photo{
+    
+    height:250px;
+    display:block;
+    margin: 50px auto 50px auto;
+    /*border-radius: 50%;*/
+}
+
+#name{
+    font-size: 30px;
+    background-color:lightblue;
+    width: 20%;
+}
+
+#quote{
+    font-size: 20px;
+    background-color:#b8b8b8;
+    width: 50%;
+    padding: 10px 0px 10px 0px;
+
+}
+
+#button1{
+    background-color: lightblue;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    border: 2px solid black; /* Green */
+}
