@@ -10,7 +10,7 @@ $( document ).ready(function() {
                 
                 //alert("done");
                 let pokemon = JSON.parse(xhr.responseText);
-                pokeinfo=[pokemon.name,pokemon.id,pokemon.sprites.front_default,pokemon.species.url];
+                pokeinfo=[pokemon.name,pokemon.id,pokemon.sprites.front_default,pokemon.species.url,pokemon.moves];
                 showpokemon();
                 getprev();
                  
@@ -29,6 +29,18 @@ $( document ).ready(function() {
         $("#pokemonimage").attr("src",pokeinfo[2]);
         $("#pokemonname").text(pokeinfo[0]);
         $("#pokemonid").text(pokeinfo[1]);
+        $("#moves").html("<ul>");
+        let aantalmoves;
+        if(pokeinfo[4].length<4){
+            aantalmoves=pokeinfo[4].length;
+        }else{
+            aantalmoves=4;
+        }
+        for (let i = 0; i < aantalmoves; i++) {
+            
+            $("#moves").html($("#moves").html() + "<li>"+pokeinfo[4][i].move.name+"</li>");
+        }
+        $("#moves").html($("#moves").html() +"</ul>");
     }
 
     function getprev(){
@@ -42,7 +54,7 @@ $( document ).ready(function() {
                 let pokemon = JSON.parse(xhr.responseText);
                 if(pokemon.evolves_from_species != null){
                     pokeinfo.push(pokemon.evolves_from_species.name);
-                    showprev(pokeinfo[4]);
+                    showprev(pokeinfo[5]);
                 }else{
                     $("#previous").attr("src",""); 
                     $("#prevname").text("Previous: none");
@@ -79,8 +91,8 @@ $( document ).ready(function() {
                 //alert("done");
                 let pokemon = JSON.parse(xhr.responseText);
                 pokeinfo.push(pokemon.sprites.front_default);
-                $("#previous").attr("src",pokeinfo[5]); 
-                $("#prevname").text("Previous: "+pokeinfo[4]);
+                $("#previous").attr("src",pokeinfo[6]); 
+                $("#prevname").text("Previous: "+pokeinfo[5]);
                 
 
             }else if(xhr.status == 404){
